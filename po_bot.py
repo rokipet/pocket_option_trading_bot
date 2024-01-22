@@ -10,6 +10,21 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
 
+chromedriver_path = 'C:\\Users\\Yosbel G\\Downloads\\pocket_option_trading_bot-main\\pocket_option_trading_bot-main\\chromedriver-win64\\chromedriver.exe'
+
+options = Options()
+options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
+options.add_argument('--ignore-ssl-errors')
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--ignore-certificate-errors-spki-list')
+options.add_argument(r'--user-data-dir=C:\Users\Yosbel G\AppData\Local\Google\Chrome\User Data')  # Update this path
+
+# Create the webdriver with the specified chromedriver path and options
+service = Service(chromedriver_path)
+driver = webdriver.Chrome(service=service, options=options)
+
+
+
 BASE_URL = 'https://pocketoption.com'  # change if PO is blocked in your country
 LENGTH_STACK_MIN = 460
 LENGTH_STACK_MAX = 1000  # 4000
