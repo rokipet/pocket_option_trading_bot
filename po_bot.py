@@ -3,27 +3,11 @@ import json
 import random
 import time
 from datetime import datetime, timedelta
+
 from selenium import webdriver
-   
-
-
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.firefox.webdriver import WebDriver as FirefoxDriver
-
-
-driver = webdriver.Firefox(executable_path='C:/Users/Administrator/Downloads/geckodriver-v0.33.0-win64/geckodriver.exe', options=FirefoxOptions())
-
-   
-
-
-
-
-driver = FirefoxDriver(service=firefox_service, options=firefox_options)
-   
-
-
-
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 
 
 BASE_URL = 'https://pocketoption.com'  # change if PO is blocked in your country
@@ -96,9 +80,9 @@ options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
 options.add_argument('--ignore-ssl-errors')
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-certificate-errors-spki-list')
-options.add_argument(r'--user-data-dir=/Users/vitaly/Library/Application Support/Google/Chrome/Default')
+options.add_argument(r'--user-data-dir=/Users/Yosbel G/Library/Application Support/Google/Chrome/Default')
 # chromedriver can be downloaded from here: https://googlechromelabs.github.io/chrome-for-testing/
-service = Service(executable_path=r'/Users/vitaly/Downloads/chromedriver-mac-arm64/chromedriver')
+service = Service(executable_path='C:/Users/Yosbel G/Downloads/pocket_option_trading_bot-main/pocket_option_trading_bot-main/chromedriver-win64/chromedriver.exe')
 driver = webdriver.Chrome(options=options, service=service)
 companies = {
     'Apple OTC': '#AAPL_otc',
