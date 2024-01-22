@@ -3,25 +3,26 @@ import json
 import random
 import time
 from datetime import datetime, timedelta
-
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
+   
 
 
-chromedriver_path = 'C:\\Users\\Yosbel G\\Downloads\\pocket_option_trading_bot-main\\pocket_option_trading_bot-main\\chromedriver-win64\\chromedriver.exe'
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.firefox.webdriver import WebDriver as FirefoxDriver
 
-options = Options()
-options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
-options.add_argument('--ignore-ssl-errors')
-options.add_argument('--ignore-certificate-errors')
-options.add_argument('--ignore-certificate-errors-spki-list')
-options.add_argument(r'--user-data-dir=C:\Users\Yosbel G\AppData\Local\Google\Chrome\User Data')  # Update this path
 
-# Create the webdriver with the specified chromedriver path and options
-service = Service(chromedriver_path)
-driver = webdriver.Chrome(service=service, options=options)
+driver = webdriver.Firefox(executable_path='C:/Users/Administrator/Downloads/geckodriver-v0.33.0-win64/geckodriver.exe', options=FirefoxOptions())
+
+   
+
+
+
+
+driver = FirefoxDriver(service=firefox_service, options=firefox_options)
+   
+
+
 
 
 
